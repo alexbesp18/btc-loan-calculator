@@ -42,32 +42,6 @@ function App() {
         }
     };
 
-    if (!authorized) {
-        return (
-            <div style={{ padding: '40px', textAlign: 'center' }}>
-                <h2>Please Enter Password</h2>
-                <form onSubmit={handlePasswordSubmit} style={{ marginBottom: '20px' }}>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        style={{ padding: '8px', fontSize: '16px' }}
-                    />
-                    <button type="submit" style={{ marginLeft: '10px', padding: '8px 12px' }}>
-                        Enter
-                    </button>
-                </form>
-                <a
-                    href="https://paypal.me/AlexanderBespalov440/20"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <button>Request Password ($20 lifetime access)</button>
-                </a>
-            </div>
-        );
-    }
-
     // --- I. INPUTS & CONTROLS State ---
     // A. My Assets & Market View
     const [collateralInputMode, setCollateralInputMode] = useState('btc'); // 'btc' or 'usd'
@@ -407,6 +381,32 @@ function App() {
         styles.container.flexDirection = 'column';
     }
 
+
+    if (!authorized) {
+        return (
+            <div style={{ padding: '40px', textAlign: 'center' }}>
+                <h2>Please Enter Password</h2>
+                <form onSubmit={handlePasswordSubmit} style={{ marginBottom: '20px' }}>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        style={{ padding: '8px', fontSize: '16px' }}
+                    />
+                    <button type="submit" style={{ marginLeft: '10px', padding: '8px 12px' }}>
+                        Enter
+                    </button>
+                </form>
+                <a
+                    href="https://paypal.me/AlexanderBespalov440/20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button>Request Password ($20 lifetime access)</button>
+                </a>
+            </div>
+        );
+    }
 
     return (
         <div style={styles.container}>
